@@ -15,4 +15,9 @@ https://github.com/Klerith/fernando-skills
 npx skills@latest add Klerith/fernando-skills
 ```
 
-## Hola Mundo
+## Commands
+
+- `npm run dev` — dev server at http://localhost:3000
+- `npm run build` — production build (also runs type-checking)
+- `npm run start` — serve the production build
+- `npm run lint` — ESLint (flat config in `eslint.config.mjs`, Next core-web-vitals + TypeScript rules)
