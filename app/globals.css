@@ -20,7 +20,11 @@
   --bronze: #d97a3a;
   --line: rgba(0, 245, 255, 0.18);
   --line-2: rgba(255, 255, 255, 0.06);
-  --pixel: var(--font-press-start-2p), "Press Start 2P", system-ui, monospace;
+  /* By name, not var(--font-press-start-2p): that var appends next/font's
+     "Press Start 2P Fallback" (Arial at size-adjust 224%), which would draw
+     glyphs missing from the font (≡) twice as big. The templates fall back to
+     system-ui. */
+  --pixel: "Press Start 2P", system-ui, monospace;
   --mono: var(--font-jetbrains-mono), "JetBrains Mono", var(--font-courier-prime), "Courier Prime", "Courier New", monospace;
 }
 
@@ -68,6 +72,10 @@
   button, input, select { font: inherit; color: inherit; }
 
   a { color: inherit; text-decoration: none; }
+
+  /* The templates had no Preflight and relied on these browser defaults. */
+  h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+  input { padding: 1px 2px; }
 }
 
 @layer components {
