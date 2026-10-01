@@ -50,7 +50,7 @@ Hallazgos sobre las plantillas que condicionan el trabajo:
   - El `leaderboard` «TOP 10» con `seededScores`, con los tres primeros puestos en oro, plata y bronce.
 - El Reproductor con simulación visual idéntica a la plantilla:
   - El HUD muestra jugador, puntuación, vidas y nivel.
-  - La puntuación falsa sube cada 220 ms y el nivel sube cada ~2 500 puntos.
+  - La puntuación falsa sube cada 220 ms y el nivel sube cada 2 500 puntos (`nivel = 1 + floor(puntuación / 2500)`). A diferencia de la plantilla, cuya regla `score % 2500 < 100` subía de nivel al arrancar y a veces saltaba dos niveles de golpe.
   - PAUSA/REANUDAR muestra y oculta la capa «EN PAUSA».
   - FIN abre el modal «FIN DEL JUEGO».
   - SALIR vuelve al Detalle.

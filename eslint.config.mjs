@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Prototype templates (in-browser Babel, global React) and local Playwright artifacts.
+    "references/**",
+    ".playwright-mcp/**",
   ]),
 ]);
 

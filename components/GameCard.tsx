@@ -2,14 +2,7 @@
 
 import { useRef, type MouseEvent } from "react";
 import Link from "next/link";
-import type { Game } from "@/lib/games";
-
-const BTN_COLOR: Record<Game["color"], string> = {
-  cyan: "",
-  green: "",
-  magenta: " magenta",
-  yellow: " yellow",
-};
+import { playButtonClass, type Game } from "@/lib/games";
 
 export default function GameCard({ game }: { game: Game }) {
   const tiltRef = useRef<HTMLAnchorElement>(null);
@@ -50,7 +43,7 @@ export default function GameCard({ game }: { game: Game }) {
             <b>{game.best.toLocaleString("es-ES")}</b>
           </div>
           {/* Toda la tarjeta es el enlace; JUGAR es visual para no anidar elementos interactivos. */}
-          <span className={"btn" + BTN_COLOR[game.color]}>JUGAR</span>
+          <span className={playButtonClass(game.color)}>JUGAR</span>
         </div>
       </div>
     </Link>

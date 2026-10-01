@@ -109,3 +109,8 @@ export const CATS = ["TODOS", "ARCADE", "PUZZLE", "SHOOTER", "VERSUS"] as const;
 export function getGame(id: string): Game | undefined {
   return GAMES.find((g) => g.id === id);
 }
+
+// Clase del botón JUGAR: .btn es cian por defecto y solo existen variantes magenta y yellow.
+export function playButtonClass(color: GameColor): string {
+  return color === "magenta" || color === "yellow" ? `btn ${color}` : "btn";
+}

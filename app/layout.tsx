@@ -23,7 +23,8 @@ const courierPrime = Courier_Prime({
 });
 
 export const metadata: Metadata = {
-  title: "Arcade Vault · Portal Retro",
+  // "/" usa el default; el template no se aplica a la página del mismo segmento.
+  title: { default: "Arcade Vault · Portal Retro", template: "%s · Arcade Vault" },
   description: "Juega clásicos arcade y compite por la puntuación más alta.",
 };
 
