@@ -10,14 +10,14 @@ export function generateStaticParams() {
   return GAMES.map((g) => ({ id: g.id }));
 }
 
-export async function generateMetadata({ params }: PageProps<"/juegos/[id]">): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<"/games/[id]">): Promise<Metadata> {
   const { id } = await params;
   const game = getGame(id);
   if (!game) notFound();
   return { title: game.title, description: game.short };
 }
 
-export default async function GameDetailPage({ params }: PageProps<"/juegos/[id]">) {
+export default async function GameDetailPage({ params }: PageProps<"/games/[id]">) {
   const { id } = await params;
   const game = getGame(id);
   if (!game) notFound();
@@ -55,10 +55,10 @@ export default async function GameDetailPage({ params }: PageProps<"/juegos/[id]
         </div>
 
         <div className="detail-actions">
-          <Link href={`/juegos/${game.id}/jugar`} className={playButtonClass(game.color) + " lg"}>
+          <Link href={`/games/${game.id}/play`} className={playButtonClass(game.color) + " lg"}>
             JUGAR
           </Link>
-          <Link href="/" className="btn ghost lg">
+          <Link href="/games" className="btn ghost lg">
             VOLVER
           </Link>
         </div>
