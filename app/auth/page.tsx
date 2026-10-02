@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "Inicia sesión o crea tu cuenta en Arcade Vault.",
 };
 
-export default function AuthPage() {
-  return <AuthForm />;
+export default async function AuthPage({ searchParams }: PageProps<"/auth">) {
+  const { tab } = await searchParams;
+  return <AuthForm initialTab={tab === "registro" ? "up" : "in"} />;
 }
