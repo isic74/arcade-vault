@@ -6,9 +6,9 @@ import { signIn, signOut } from "@/lib/session";
 
 type Tab = "in" | "up";
 
-export default function AuthForm() {
+export default function AuthForm({ initialTab = "in" }: { initialTab?: Tab }) {
   const router = useRouter();
-  const [tab, setTab] = useState<Tab>("in");
+  const [tab, setTab] = useState<Tab>(initialTab);
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   const [email, setEmail] = useState("");
