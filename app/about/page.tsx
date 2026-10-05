@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "@/components/about/ContactForm";
 import HighlightIcon from "@/components/about/HighlightIcon";
 import RevealOnScroll from "@/components/home/RevealOnScroll";
 import { HIGHLIGHTS } from "@/lib/about";
@@ -62,7 +63,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* El formulario de contacto se monta aquí (Paso 7). */}
+          <ContactForm />
         </div>
       </section>
     </div>
